@@ -16,7 +16,7 @@ spec:
       releaseName: quarkus-release
       valueFiles:
       - $Infra/value/values.yaml
-  - repoURL: 'https://github.com/younesELouafi/helm-argo.git'
+  - repoURL: 'https://github.com/younesELouafi/helm-argo'
     targetRevision: dev
     ref: Infra    
   syncPolicy:
