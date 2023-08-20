@@ -8,12 +8,17 @@ spec:
     namespace: quarkus-ns
     server: https://kubernetes.default.svc
   project: default
-  source:
+  sources:
+  - repoURL: 'https://redhat-developer.github.io/redhat-helm-charts'
     chart: quarkus
-    repoURL: https://redhat-developer.github.io/redhat-helm-charts
     targetRevision: 0.0.3
     helm:
       releaseName: quarkus-release
+      valueFiles:
+      - $Infra/value/values.yaml
+  - repoURL: 'https://github.com/younesELouafi/helm-argo.git'
+    targetRevision: dev
+    ref: Infra    
   syncPolicy:
     retry:
       backoff:
