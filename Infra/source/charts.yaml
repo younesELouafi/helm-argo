@@ -13,7 +13,7 @@ spec:
     chart: quarkus
     targetRevision: 0.0.3
     helm:
-      releaseName: quarkus-release
+      releaseName: quarkus-rele
       valueFiles:
       - $Infra/value/values.yaml
   - repoURL: 'https://github.com/younesELouafi/helm-argo'
