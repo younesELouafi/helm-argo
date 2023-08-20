@@ -17,7 +17,6 @@ spec:
       valueFiles:
       - $Infra/value/values.yaml
   - repoURL: 'https://github.com/younesELouafi/helm-argo'
-    targetRevision: dev
     ref: Infra    
   syncPolicy:
     retry:
