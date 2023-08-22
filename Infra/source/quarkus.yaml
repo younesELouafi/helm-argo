@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: quarkus-helm
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/younesELouafi/helm-argo'
+    path: Infra/quarkus
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: quarkus-ns
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
