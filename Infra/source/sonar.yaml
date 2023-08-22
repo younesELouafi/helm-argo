@@ -13,6 +13,12 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: sonar-ns
   syncPolicy:
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 5
     automated:
       selfHeal: true
       prune: true
